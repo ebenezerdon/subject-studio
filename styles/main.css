@@ -1,0 +1,39 @@
+/* styles/main.css - regular CSS rules (no Tailwind directives here) */
+
+:root{
+  --bg: #f9fafb;
+  --muted: #6b7280;
+  --accent: #4f46e5;
+}
+
+html,body{height:100%;}
+
+body{background:var(--bg);font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;}
+
+/* Preview container sizing - responsive */
+#preview-wrapper{transition:width 280ms ease;}
+
+/* Length badge colors */
+.length-good{background:#ecfdf5;color:#065f46;}
+.length-caution{background:#fffbeb;color:#92400e;}
+.length-bad{background:#fff1f2;color:#9f1239;}
+
+/* Subtle card hover for history items */
+#history-list > div:hover{transform:translateY(-2px);transition:transform 180ms ease;}
+
+/* Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce){
+  *{transition:none!important;animation:none!important}
+}
+
+/* Small utilities */
+.card{background:white;border-radius:0.5rem;padding:1rem;box-shadow:0 1px 6px rgba(16,24,40,0.04);}
+
+/* Ensure readable focus states for keyboard navigation */
+:focus{outline:2px solid rgba(79,70,229,0.18);outline-offset:2px}
+
+/* Make the textarea font identical to preview for more accurate feel */
+#subject-input{font-family:inherit;font-size:1.05rem}
+
+/* Truncate preview subject with ellipsis */
+#preview-subject{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}

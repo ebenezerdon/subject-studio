@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Subject Studio - Email subject line tester</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <link rel="stylesheet" href="styles/main.css">
+
+  <!-- Tailwind component layer for shared classes. This single inline block enables @apply usage. -->
+  <style type="text/tailwindcss" data-teda="tailwind-apply">
+    @layer components {
+      .btn-primary { @apply bg-indigo-600 text-white px-5 py-3 rounded-lg shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-300; }
+      .btn-secondary { @apply bg-white border border-gray-200 px-3 py-2 rounded-md text-sm text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-100; }
+      .card { @apply bg-white rounded-xl shadow-lg p-8; }
+      .accent { @apply text-indigo-600; }
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800 min-h-screen">
+  <!-- Header -->
+  <header class="max-w-6xl mx-auto px-6 py-6 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-3" aria-label="Subject Studio home">
+      <div class="w-10 h-10 bg-indigo-600 rounded-md flex items-center justify-center text-white font-semibold shadow">SS</div>
+      <div class="hidden sm:block">
+        <h1 class="text-lg font-semibold">Subject Studio</h1>
+        <p class="text-sm text-gray-500">Sharper subject lines in seconds</p>
+      </div>
+    </a>
+
+    <nav class="flex items-center gap-3">
+      <a class="btn-secondary" href="app.html">Open Tester</a>
+      <a class="text-sm text-gray-500 hover:text-gray-700" href="#features">Features</a>
+    </nav>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-6 py-12">
+    <!-- Hero -->
+    <section class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center bg-white rounded-xl p-8 shadow">
+      <div>
+        <h2 class="text-4xl font-extrabold leading-tight">Write subject lines that get opened.</h2>
+        <p class="mt-4 text-lg text-gray-600 max-w-2xl">Test and refine subject lines with live length checks, tone hints, and realistic preview widths so you know how your message appears in an inbox.</p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="app.html" class="btn-primary inline-flex items-center" aria-label="Try the tester now">Try the tester</a>
+          <a href="#features" class="btn-secondary">See features</a>
+        </div>
+      </div>
+
+      <div aria-hidden="true">
+        <div class="card bg-gradient-to-b from-white to-indigo-50">
+          <div class="text-xs text-gray-500 uppercase">Live preview</div>
+          <div class="mt-4 bg-white rounded-md p-4 border border-gray-100">
+            <div class="text-sm text-gray-600">Try these examples:</div>
+            <ul class="mt-3 space-y-2 text-sm text-gray-700">
+              <li class="flex items-center justify-between"><span>Sale: 50% off today only</span><button class="btn-secondary btn-load" data-subject="Sale: 50% off today only">Load</button></li>
+              <li class="flex items-center justify-between"><span>Quick question about your account</span><button class="btn-secondary btn-load" data-subject="Quick question about your account">Load</button></li>
+              <li class="flex items-center justify-between"><span>Last step to join — confirm email</span><button class="btn-secondary btn-load" data-subject="Last step to join - confirm email">Load</button></li>
+            </ul>
+            <div class="mt-4 text-xs text-gray-500">These load into the tester so you can experiment with tweaks and previews.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" aria-hidden="false">
+      <div class="card flex gap-4 items-start">
+        <div class="w-10 h-10 rounded-md bg-indigo-50 flex items-center justify-center text-indigo-600 font-bold">01</div>
+        <div>
+          <dt class="font-semibold">Length checks</dt>
+          <dd class="text-sm text-gray-600">Real-time counts and clear color feedback for ideal subject lengths.</dd>
+        </div>
+      </div>
+
+      <div class="card flex gap-4 items-start">
+        <div class="w-10 h-10 rounded-md bg-indigo-50 flex items-center justify-center text-indigo-600 font-bold">02</div>
+        <div>
+          <dt class="font-semibold">Tone hints</dt>
+          <dd class="text-sm text-gray-600">Quick suggestions if your tone is friendly, urgent, or too salesy with practical tips.</dd>
+        </div>
+      </div>
+
+      <div class="card flex gap-4 items-start">
+        <div class="w-10 h-10 rounded-md bg-indigo-50 flex items-center justify-center text-indigo-600 font-bold">03</div>
+        <div>
+          <dt class="font-semibold">Preview widths</dt>
+          <dd class="text-sm text-gray-600">See how your subject truncates on mobile, desktop, and popular email clients.</dd>
+        </div>
+      </div>
+
+      <div class="card flex gap-4 items-start">
+        <div class="w-10 h-10 rounded-md bg-indigo-50 flex items-center justify-center text-indigo-600 font-bold">04</div>
+        <div>
+          <dt class="font-semibold">Persistent history</dt>
+          <dd class="text-sm text-gray-600">Save versions and compare results. Works locally in your browser.</dd>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="mt-12">
+      <h3 class="text-2xl font-semibold">What people say</h3>
+      <div class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <blockquote class="card">
+          <p class="text-sm text-gray-700">"Fast, clear feedback. We improved our open rates within a week."</p>
+          <footer class="mt-3 text-xs text-gray-500">Maria T, Email Marketer</footer>
+        </blockquote>
+
+        <blockquote class="card">
+          <p class="text-sm text-gray-700">"I use this every time before sending campaigns. The previews are invaluable."</p>
+          <footer class="mt-3 text-xs text-gray-500">Jamal R, Growth</footer>
+        </blockquote>
+
+        <blockquote class="card">
+          <p class="text-sm text-gray-700">"Simple, fast, and builds my confidence when writing subject lines."</p>
+          <footer class="mt-3 text-xs text-gray-500">Priya N, Founder</footer>
+        </blockquote>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-gray-100 py-8 mt-10 text-sm text-gray-500">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <div>Built with care by <a class="accent underline" href="https://teda.dev" target="_blank" rel="noopener noreferrer">Teda.dev</a></div>
+      <div class="flex gap-4 items-center">
+        <a href="app.html" class="btn-primary">Open Tester</a>
+        <a href="#" class="text-gray-400">Privacy</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Small enhancement: wire the example load buttons on the landing page using jQuery.
+    // Persists a quick load into sessionStorage so app.html can pick it up.
+    $(function(){
+      $('button.btn-load').on('click', function(){
+        const subject = $(this).attr('data-subject') || '';
+        try { sessionStorage.setItem('subject-studio-quick-load', subject); } catch(e){}
+        window.location.href = 'app.html';
+      });
+    });
+  </script>
+
+  <script src="scripts/helpers.js"></script>
+  <script src="scripts/ui.js"></script>
+  <script src="scripts/main.js"></script>
+</body>
+</html>
